@@ -102,7 +102,6 @@ RUN curl -Lo /tmp/qt/installer.run "${QT_DOWNLOAD_BASE_URL}/official_releases/qt
     && /tmp/qt/extract-qt-installer.sh /tmp/qt/installer.run "$QT_PATH" \
     && find "$QT_PATH" -mindepth 1 -maxdepth 1 ! -name "${QT_VERSION}" -exec echo 'Cleaning Qt SDK: {}' \; -exec rm -r '{}' \;  \
     && /tmp/qt/install-linuxdeployqt.sh \
-    && /tmp/qt/install-additional-qt-libs.sh "${QT_PATH}" "${QT_VERSION}" \
     && rm -rf /tmp/qt
 
 # Reconfigure locale
