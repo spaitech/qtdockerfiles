@@ -88,7 +88,7 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     && apt-get -qq clean
 
 
-COPY extract-qt-installer.sh install-linuxdeployqt.sh install-additional-qt-libs.sh /tmp/qt/
+COPY extract-qt-installer.sh install-linuxdeployqt.sh /tmp/qt/
 
 
 # Download & unpack Qt toolchains
