@@ -80,7 +80,11 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     libpulse-dev \
     libudev-dev \
     libxtst-dev \
-    \
+    openssh-server \
+    libsdl2-2.0-0 \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-bad \
+    gstreamer1.0-libav \
     && apt-get -qq clean
 
 
