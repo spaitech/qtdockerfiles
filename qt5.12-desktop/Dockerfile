@@ -85,7 +85,20 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-bad \
     gstreamer1.0-libav \
+    mesa-common-dev \
+    libsdl2-dev \
+    libgdal-dev \
+    libglm-dev \
+    libexif-dev \
+    libgst-dev \
+    libgstreamer1.0-dev \
+    libgstreamer-plugins-base1.0-dev \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-libav \
+    gstreamer1.0-vaapi \
+    vainfo \
     && apt-get -qq clean
+
 
 
 COPY extract-qt-installer.sh install-linuxdeployqt.sh /tmp/qt/
