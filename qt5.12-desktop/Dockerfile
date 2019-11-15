@@ -97,6 +97,11 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     gstreamer1.0-libav \
     gstreamer1.0-vaapi \
     vainfo \
+    fuse \
+    libfuse2 \
+    libpopt0 \
+    rsync \
+    wget 
     && apt-get -qq clean
 
 
