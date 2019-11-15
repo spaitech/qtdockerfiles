@@ -101,7 +101,7 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     libfuse2 \
     libpopt0 \
     rsync \
-    wget 
+    wget \
     && apt-get -qq clean
 
 
