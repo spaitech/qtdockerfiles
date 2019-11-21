@@ -102,6 +102,11 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     libpopt0 \
     rsync \
     wget \
+    libsdl2-dev \
+    unzip \
+    xfce4 \
+    xfce4-goodies \
+    tightvncserver \
     && apt-get -qq clean
 
 
