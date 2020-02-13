@@ -18,6 +18,7 @@ ENV PATH $QT_DESKTOP/bin:$PATH
 #  * libxi6, libgconf-2-4, libgtk-3-0, libx11-xcb1, libpq5, file - dependencies of the linuxdeployqt
 
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
+    make \
     git \
     openssh-client \
     ca-certificates \
