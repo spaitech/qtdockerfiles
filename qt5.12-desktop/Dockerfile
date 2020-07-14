@@ -16,7 +16,7 @@ ENV PATH $QT_DESKTOP/bin:$PATH
 #  * build-essential, pkg-config, libgl1-mesa-dev - basic Qt build requirements
 #  * libsm6, libice6, libxext6, libxrender1, libfontconfig1, libdbus-1-3 - dependencies of the Qt bundle run-file
 #  * libxi6, libgconf-2-4, libgtk-3-0, libx11-xcb1, libpq5, file - dependencies of the linuxdeployqt
-RUN apt install -y software-properties-common
+RUN apt update && apt install -y software-properties-common
 RUN add-apt-repository -y ppa:ubuntugis/ppa
 
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
