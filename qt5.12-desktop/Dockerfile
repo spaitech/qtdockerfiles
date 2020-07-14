@@ -16,6 +16,7 @@ ENV PATH $QT_DESKTOP/bin:$PATH
 #  * build-essential, pkg-config, libgl1-mesa-dev - basic Qt build requirements
 #  * libsm6, libice6, libxext6, libxrender1, libfontconfig1, libdbus-1-3 - dependencies of the Qt bundle run-file
 #  * libxi6, libgconf-2-4, libgtk-3-0, libx11-xcb1, libpq5, file - dependencies of the linuxdeployqt
+RUN add-apt-repository -y ppa:ubuntugis/ppa
 
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
     make \
@@ -88,7 +89,6 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     gstreamer1.0-libav \
     mesa-common-dev \
     libsdl2-dev \
-    libgdal-dev \
     libglm-dev \
     libexif-dev \
     libgst-dev \
@@ -108,6 +108,8 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     xfce4 \
     xfce4-goodies \
     tightvncserver \
+    gdal-bin \
+    libgdal-dev \
     && apt-get -qq clean
 
 
