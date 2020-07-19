@@ -10,9 +10,9 @@ chmod +x ./installer.run
 
 export QT_VER=$(echo "${QT_VERSION}" | tr -d .)
 
-./installer.run -platform minimal --verbose --script qt-installer-noninteractive.qs 
+./installer.run -platform minimal --verbose --script /tmp/qt/qt-installer-noninteractive.qs 
 
 find "$QT_PATH" -mindepth 1 -maxdepth 1 ! -name "${QT_VERSION}" -exec echo 'Cleaning Qt SDK: {}' \; -exec rm -r '{}' \;
 
-./install-linuxdeployqt.sh
+./tmp/qt/install-linuxdeployqt.sh
 rm -rf /tmp/qt
