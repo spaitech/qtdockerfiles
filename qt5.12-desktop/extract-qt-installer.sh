@@ -12,5 +12,5 @@ export QT_VER=$(echo "${QT_VERSION}" | tr -d .)
 
 ./installer.run -platform minimal --verbose --script qt-installer-noninteractive.qs 
 
-./install-linuxdeployqt.sh \
+./install-linuxdeployqt.sh
 rm -rf /tmp/qt
