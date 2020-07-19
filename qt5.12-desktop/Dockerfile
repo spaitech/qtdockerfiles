@@ -116,17 +116,14 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
 
 
 COPY extract-qt-installer.sh install-linuxdeployqt.sh qt-installer-noninteractive.qs /tmp/qt/
-COPY qtaccount.ini ~/.local/share/Qt
+COPY qtaccount.ini ~/.local/share/Qt/
 
 # Download & unpack Qt toolchains
 # Download & unpack linuxdeployqt
 # Download & unpack QtJsonSerializer
 # Clean
 
-RUN /tmp/qt/extract-qt-installer.sh \
-    && find "$QT_PATH" -mindepth 1 -maxdepth 1 ! -name "${QT_VERSION}" -exec echo 'Cleaning Qt SDK: {}' \; -exec rm -r '{}' \;  \
-    && /tmp/qt/install-linuxdeployqt.sh \
-    && rm -rf /tmp/qt
+RUN /tmp/qt/extract-qt-installer.sh
 
 # Reconfigure locale
 RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
