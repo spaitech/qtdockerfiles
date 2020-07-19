@@ -115,18 +115,15 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
 
 
 
-COPY extract-qt-installer.sh install-linuxdeployqt.sh /tmp/qt/
-
+COPY extract-qt-installer.sh install-linuxdeployqt.sh qt-installer-noninteractive.qs /tmp/qt/
+COPY qtaccount.ini ~/.local/share/Qt
 
 # Download & unpack Qt toolchains
 # Download & unpack linuxdeployqt
 # Download & unpack QtJsonSerializer
 # Clean
 
-RUN curl -Lo /tmp/qt/installer.run "${QT_DOWNLOAD_BASE_URL}/official_releases/qt/$(echo "${QT_VERSION}" | cut -d. -f 1-2)/${QT_VERSION}/qt-opensource-linux-x64-${QT_VERSION}.run" \
-    && export QT_VER=$(echo "${QT_VERSION}" | tr -d .) \
-    && export QT_CI_PACKAGES=qt.qt5.$QT_VER.gcc_64,qt.qt5.$QT_VER.qtcharts,qt.qt5.$QT_VER.qtdatavis3d,qt.qt5.$QT_VER.qtpurchasing,qt.qt5.$QT_VER.qtvirtualkeyboard,qt.qt5.$QT_VER.qtwebengine,qt.qt5.$QT_VER.qtnetworkauth,qt.qt5.$QT_VER.qtwebglplugin,qt.qt5.$QT_VER.qtscript \
-    && /tmp/qt/extract-qt-installer.sh /tmp/qt/installer.run "$QT_PATH" \
+RUN /tmp/qt/extract-qt-installer.sh \
     && find "$QT_PATH" -mindepth 1 -maxdepth 1 ! -name "${QT_VERSION}" -exec echo 'Cleaning Qt SDK: {}' \; -exec rm -r '{}' \;  \
     && /tmp/qt/install-linuxdeployqt.sh \
     && rm -rf /tmp/qt
