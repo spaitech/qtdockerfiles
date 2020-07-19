@@ -116,7 +116,7 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
 
 
 COPY extract-qt-installer.sh install-linuxdeployqt.sh qt-installer-noninteractive.qs /tmp/qt/
-COPY qtaccount.ini ~/.local/share/Qt/
+COPY qtaccount.ini /root/.local/share/Qt/
 
 # Download & unpack Qt toolchains
 # Download & unpack linuxdeployqt
