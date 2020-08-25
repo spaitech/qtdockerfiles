@@ -19,12 +19,3 @@ RUN pip3 install pyocclient && \
     pip3 install scp && \
     pip3 install pexpect && \
     pip3 install paramiko
-
-RUN cd /tmp/ && \
-    git clone https://git.dev-u.cn/TRoman/Nuitka && cd Nuitka && git checkout tags/0.6.8.4 && \
-    # apply patch to SingleExe.scons to pass gcc linkflag -no-pie for correct launch of compiled binary
-    # which Nuitka does not use by default, for details see https://gcc.gnu.org/onlinedocs/gcc/Link-Options.html#Link-Options
-    # applicable only for Nuitka 0.6.8.4, should be reworked in case if another compiler version used
-    sed -i '823i\\n    env.Append(LINKFLAGS=["-no-pie"])' /tmp/Nuitka/nuitka/build/SingleExe.scons && \
-    python3 setup.py install
-
