@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 MAINTAINER troman <rotkachenkoone@gmail.com>
 
-RUN apt update
-RUN apt install -y build-essential \
+
+RUN apt update && apt install -y build-essential \
     python3.6 \
     git \
     python3-pip \
