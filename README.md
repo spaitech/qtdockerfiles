@@ -48,3 +48,6 @@ Exta dev libs:
 - [QtAV](https://github.com/wang-bin/QtAV)
 - [QtJsonSerializer](https://github.com/Skycoder42/QtJsonSerializer)
 - [linuxdeployqt](https://github.com/probonopd/linuxdeployqt)
+
+## ventana
+- needed sources are not attached(size is too much)
