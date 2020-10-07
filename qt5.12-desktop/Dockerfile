@@ -22,6 +22,7 @@ RUN add-apt-repository -y ppa:ubuntugis/ppa
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
     make \
     git \
+    davfs2 \
     openssh-client \
     ca-certificates \
     locales \

@@ -3,6 +3,7 @@ MAINTAINER troman <rotkachenkoone@gmail.com>
 
 
 RUN apt update && apt install -y build-essential \
+    davfs2 \
     python3.6 \
     git \
     python3-pip \
