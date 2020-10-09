@@ -1,13 +1,16 @@
 FROM ubuntu:18.04
 MAINTAINER troman <rotkachenkoone@gmail.com>
+ENV DEBIAN_FRONTEND noninteractive
 
-
-RUN apt update && apt install -y build-essential \
+RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
+    build-essential \
     davfs2 \
     python3.6 \
     git \
+    python3-dev \
     python3-pip \
     python3-pyqt5 \
+    python3-setuptools \
     locales \
     chrpath
 

@@ -25,7 +25,8 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     locales \
     python \
     davfs2 \
-    sudo \
+    sudo \ 
+    zip \
     curl \
     file \
     \
