@@ -134,7 +134,7 @@ RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
 RUN groupadd -r user && useradd --create-home --gid user user && echo 'user ALL=NOPASSWD: ALL' > /etc/sudoers.d/user
 
 #create ssh folder
-RUN mkdir /home/user/.ssh/
+RUN mkdir /home/user/.ssh/ && chown user /home/user/.ssh/
 
 USER user
 WORKDIR /home/user
