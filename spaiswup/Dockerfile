@@ -19,8 +19,9 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
 RUN locale-gen en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
-#generating key for uploading of artifacts
-RUN mkdir ~/.ssh/ && ssh-keyscan -H 172.16.0.187 >> ~/.ssh/known_hosts
+#create ssh folder
+RUN mkdir ~/.ssh/
+
 #order should not be changed due to different versions of nycl installed by paramiko and scp
 RUN pip3 install pyocclient && \
     pip3 install scp && \

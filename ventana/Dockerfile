@@ -20,6 +20,8 @@ ENV PATH $QT_DESKTOP/bin:$PATH
 
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
     git \
+    ssh \
+    sshpass \
     openssh-client \
     ca-certificates \
     locales \
@@ -34,6 +36,8 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     \
     && apt-get -qq clean
 
+#create ssh folder
+RUN mkdir ~/.ssh/
 
 RUN mkdir /tmp/yocto 
 COPY ventana-yocto-1-8-2-sdk-20160328-1730-sh /tmp/yocto

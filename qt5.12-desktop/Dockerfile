@@ -22,7 +22,8 @@ RUN add-apt-repository -y ppa:ubuntugis/ppa
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
     make \
     git \
-    davfs2 \
+    ssh \
+    sshpass \
     openssh-client \
     ca-certificates \
     locales \
@@ -131,6 +132,9 @@ RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
 
 # Add group & user + sudo
 RUN groupadd -r user && useradd --create-home --gid user user && echo 'user ALL=NOPASSWD: ALL' > /etc/sudoers.d/user
+
+#create ssh folder
+RUN mkdir /home/user/.ssh/
 
 USER user
 WORKDIR /home/user
