@@ -21,7 +21,6 @@ ENV PATH $QT_DESKTOP/bin:$PATH
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
     git \
     ssh \
-    sshpass \
     openssh-client \
     ca-certificates \
     locales \

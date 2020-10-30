@@ -5,7 +5,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
     build-essential \
     ssh \
-    sshpass \
     python3.6 \
     git \
     python3-dev \
