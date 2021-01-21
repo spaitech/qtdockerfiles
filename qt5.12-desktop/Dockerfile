@@ -63,7 +63,7 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     libxrandr-dev \
     libfontconfig1-dev \
     libxss-dev \
-    libsrtp0-dev \
+    libsrtp2-dev \
     libwebp-dev \
     libjsoncpp-dev \
     libopus-dev \
@@ -78,7 +78,7 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     libcups2-dev \
     libdrm-dev \
     libegl1-mesa-dev \
-    libgcrypt11-dev \
+    libgcrypt20-dev \
     libnss3-dev \
     libpci-dev \
     libpulse-dev \
