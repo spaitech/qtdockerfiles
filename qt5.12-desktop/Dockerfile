@@ -111,8 +111,8 @@ RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends 
     xfce4-goodies \
     tightvncserver \
     gdal-bin \
-    libgdal-dev \
-    && apt-get -qq clean
+    libgdal-dev
+ RUN apt-get -qq clean
 
 
 
