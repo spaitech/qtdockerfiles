@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 MAINTAINER troman <rotkachenkoone@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update && apt full-upgrade -y && apt install -y --no-install-recommends \
     build-essential \
     ssh \
-    python3.6 \
+    python3.8 \
     git \
     python3-dev \
     python3-pip \
